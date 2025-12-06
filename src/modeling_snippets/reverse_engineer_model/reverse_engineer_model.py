@@ -38,7 +38,9 @@ class ReverseEngineerModel:
             else:
                 f.write(inspect.getsource(module))
 
-    def _hook(self_, module: torch.nn.Module, input_args: tuple, input_kwargs: dict[str, Any], outputs: torch.Tensor) -> None:
+    def _hook(
+        self_, module: torch.nn.Module, input_args: tuple, input_kwargs: dict[str, Any], outputs: torch.Tensor
+    ) -> None:
         self: torch.nn.Module = self_.model
         self
 
